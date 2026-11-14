@@ -8,7 +8,7 @@ GitHub Actions 使用 `macos-15` 运行器；优先选择安装的 Xcode 16.4，
 
 流程生成工程 → 编译 iPhone App → 编译 Watch App → 自动选择已安装的 iPhone 模拟器 → 执行 XCTest → 上传日志、xcresult 和模拟器 App 压缩包。任一步失败都保持构建失败，已有日志仍上传；不会用静态语法检查代替编译。
 
-构建日志和产物位于 Actions 的对应运行页面，保留 7 天。仓库为私有时，访问日志与下载产物需要仓库权限。运行时间按 GitHub 账户的 Actions 额度与设置计量，不会自动设置付费额度。
+构建日志和产物位于 Actions 的对应运行页面，保留 7 天。仓库为私有时，访问日志与下载产物需要仓库权限。当前仓库为公开仓库；运行时间按 GitHub 账户的 Actions 额度与设置计量，不会自动设置付费额度。
 
 ## 产物的含义
 
@@ -22,3 +22,7 @@ GitHub Actions 使用 `macos-15` 运行器；优先选择安装的 Xcode 16.4，
 ## 后续真机分发
 
 如需不借助本地 Mac 安装测试版，下一阶段配置 Apple Developer Program、App Store Connect 和 TestFlight。需唯一 bundle ID、发行证书、provisioning profiles 以及分发权限，密钥应保存为 GitHub Actions Secrets。当前流程没有配置签名或 TestFlight，也没有上传任何 Apple 凭据。
+
+## 首次验证结果
+
+[运行 #1](https://github.com/GEORGE-LOH/DayEcho/actions/runs/43577343588)：iPhone 和 Watch 模拟器构建通过，7 项 XCTest 全部通过。产物名称为 `DayEcho-build-1`，保留至 2026-11-21；产物过期后可重新运行。此结果对应提交 `a3230c85617f106631e03db8635a8a576fbd602e`。

@@ -2,7 +2,9 @@
 
 独立实现的个人录音与回顾应用。参考公开的产品需求，不包含 Auday 源码、品牌素材或私有接口。
 
-**状态：0.1 源码工程，尚未在 Xcode 编译或真机运行。不是可安装 IPA，也不是功能齐全的 Auday 替代品。** 当前环境为 Linux，缺少 Apple SDK、代码签名和配对设备。Swift 语法检查不等同于 Apple SDK 类型检查或运行测试。
+**状态：0.1 开发预览，已通过云端 Xcode 16.4 的 iPhone / Watch 模拟器构建和全部 7 项 XCTest。尚未真机验证，不是可安装到真机的 IPA，也不是功能齐全的 Auday 替代品。**
+
+[查看成功构建与下载产物](https://github.com/GEORGE-LOH/DayEcho/actions/runs/43577343588) · [验证记录](docs/VALIDATION.md)
 
 ## 当前代码覆盖
 
@@ -53,7 +55,7 @@ xcodebuild -project DayEcho.xcodeproj -scheme DayEcho \
   -destination 'platform=iOS Simulator,id=YOUR_SIMULATOR_UDID' test
 ```
 
-测试源码覆盖重复导入、删除后重传、损坏索引保护、AI 输入上限、引用过滤和 HTTPS 地址校验。这里尚未运行 XCTest。
+测试源码覆盖重复导入、删除后重传、损坏索引保护、AI 输入上限、引用过滤和 HTTPS 地址校验。7 项测试已在 GitHub macOS 运行器上的 iPhone 模拟器执行，全部通过。
 
 模拟器不能替代手表真机音频、转写模型、后台运行和离线传输测试。详见 `docs/ACCEPTANCE.md`。
 
