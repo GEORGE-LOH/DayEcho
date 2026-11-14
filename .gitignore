@@ -1,0 +1,10 @@
+Generated/
+*.xcodeproj/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+*.xcresult/
+WatchDerivedData/
+ci-results/
+__pycache__/
